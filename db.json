@@ -1,4 +1,4 @@
-{ 
+{
   "persons": [
     {
       "name": "Mary Poppendieck",
@@ -14,11 +14,6 @@
       "name": "Anna Pretty",
       "phone": "444-999-888",
       "id": 6
-    },
-    {
-      "name": "Katka Mala",
-      "phone": "645 32 22",
-      "id": 7
     }
   ]
 }
