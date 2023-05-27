@@ -31,8 +31,13 @@ a:hover{
     color: darkgreen;
    
   }
-
-  .message--error {
-    color: crimson;
+  .message--error{
+  color: rgb(219, 28, 28);
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
   }
 
