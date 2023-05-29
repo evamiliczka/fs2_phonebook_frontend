@@ -1,20 +1,29 @@
 import axios from 'axios'
 
-const baseUrl =  'http://localhost:3001/persons'; //'http://localhost:3001/api/persons';
+const baseUrl =  'http://localhost:3001/api/persons'; //'http://localhost:3001/persons';
 
 const getAll = () =>{
     const request = axios.get(baseUrl)
     const nonExisting = {
         id: 10000,
         name: 'This person is not on the server',
-        phone: '4444',
+        number: '4444',
       }
       return request.then(response => response.data.concat(nonExisting))
 }
    // axios.get(baseUrl).then(response => response.data);
 
-const create = newPerson =>
-    axios.post(baseUrl, newPerson).then(response => response.data);
+/*const create = newPerson =>
+    axios.post(baseUrl, newPerson).then(response => response.data);*/
+
+
+    const create = async newPerson => {
+        console.log('Going to post this person', newPerson);
+        const request = axios.post(baseUrl, newPerson); //.then(response => response.data);
+        const response = await request;
+        console.log('the response is ', response);
+        return response.data;
+    }
 
 const deleteFromDB = id => 
     axios.delete(`${baseUrl}/${id}`)

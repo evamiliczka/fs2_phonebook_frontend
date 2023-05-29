@@ -4,7 +4,7 @@ import personService from '../services/personServices'
 
 const Submit = ({persons, setPersons}) => {
   const [newName, setNewName] = useState('');
-  const [newPhone, setNewPhone] = useState('');
+  const [newNumber, setNewNumber] = useState('');
   
   
   const handleNameChange = (event) =>{
@@ -12,7 +12,7 @@ const Submit = ({persons, setPersons}) => {
   }
 
   const handlePhoneChange = (event) => {
-    setNewPhone(event.target.value);
+    setNewNumber(event.target.value);
   }
 
 const addPerson = (event) => {
@@ -20,7 +20,7 @@ const addPerson = (event) => {
   const personObject = {
    // id: persons.length +1,
     name : newName.replace(/\s+/g," ").trim(), //remove unnnecessary spaces
-    phone: newPhone
+    number: newNumber
   }
 
   //Check if the new name IS NOT already contained in the lis
@@ -37,7 +37,7 @@ const addPerson = (event) => {
      //   console.log('Person added:', response.data);
         setPersons(persons.concat(returnedPerson));
         setNewName('')
-        setNewPhone('')
+        setNewNumber('')
       })
 
   }
@@ -48,7 +48,7 @@ const addPerson = (event) => {
     <h2>Add new</h2>
     <form onSubmit={addPerson}>
         <div>Name: <input value={newName} onChange = {handleNameChange} /></div>
-        <div>Phone number: <input value={newPhone} onChange = {handlePhoneChange} /></div>
+        <div>Phone number: <input value={newNumber} onChange = {handlePhoneChange} /></div>
         <button type="submit">Save person</button>
       </form> 
       
