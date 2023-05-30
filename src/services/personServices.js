@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-const baseUrl =  'http://localhost:3001/persons'; //'http://localhost:3001/api/persons';
+const baseUrl = '/api/persons'; //http://localhost:3001/api/persons'; //'http://localhost:3001/persons';
 
 const getAll = () =>{
     const request = axios.get(baseUrl)
     const nonExisting = {
         id: 10000,
         name: 'This person is not on the server',
-        phone: '4444',
+        number: '4444',
       }
       return request.then(response => response.data.concat(nonExisting))
 }

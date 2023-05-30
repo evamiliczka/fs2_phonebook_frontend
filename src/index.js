@@ -9,7 +9,8 @@ import Footer from './components/Footer'
 
 
 
-    ReactDOM.createRoot(document.getElementById('root')).render(
+    ReactDOM.createRoot(
+      document.getElementById('root')).render(
       <><PhoneBookDB />
       <br></br>
       <div><Countries /></div>
