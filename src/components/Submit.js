@@ -25,12 +25,12 @@ const addPerson = (event) => {
 
   //Check if the new name IS NOT already contained in the lis
   // Ak najde dajaku zhodu, tak nedovoli pridat
-  const existingPerson = 
+ /* const existingPerson = 
       persons.find(person => person.name.toLowerCase() === personObject.name.toLowerCase());
   if (existingPerson){
     alert(`The person ${personObject.name} already exists in the phonebook`);
   }
-  else  {
+  else  {*/
     personService
       .create(personObject)
       .then(returnedPerson => {
@@ -40,7 +40,7 @@ const addPerson = (event) => {
         setNewNumber('')
       })
 
-  }
+ // }
 }
 
   return(
